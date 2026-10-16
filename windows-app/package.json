@@ -1,0 +1,35 @@
+{
+  "name": "banksaathi-desktop",
+  "version": "1.0.0",
+  "description": "BankSaathi desktop app",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "in.banksaathi.desktop",
+    "productName": "BankSaathi",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "BankSaathi-Setup-Portable.exe"
+    }
+  }
+}
